@@ -70,7 +70,7 @@ var practiceItemTypes = ["practice"];
 var manualSendResults = true;
 
 var defaults = [
-   // "Maze", {redo: true}, //uncomment to try "redo" mode
+    "Maze", {redo: true}, //uncomment to try "redo" mode
 ];
 
 // following is from the A-maze site to make breaks every 20 maze sentences
