@@ -69,6 +69,7 @@ var practiceItemTypes = ["practice"];
 
 var manualSendResults = true;
 
+// this doesn't work for "pushed" items from CSV only practice
 var defaults = [
     "Maze", {redo: true}, //uncomment to try "redo" mode
 ];
@@ -119,7 +120,7 @@ function modifyRunningOrder(ro) {
 Template("husband_2022_stimuli.csv", row => {
     items.push(
         [[row.label, row.item] , "PennController", newTrial(
-            newController("Maze", {s: row.sentence, a: row.alternative})
+            newController("Maze", {s: row.sentence, a: row.alternative, redo: true})
               .print()
               .log()
               .wait()
