@@ -10,58 +10,8 @@ var shuffleSequence = seq("setup", "intro",
  // trials named _dummy_ will be excluded by following:
                         sepWith("sep", rshuffle(startsWith("husb"))),
  						"sendresults",
-                        "completion"
+                        "end"
                 );
-
-
-
-// setup
-newTrial("setup",
-     // Automatically print all Text elements, centered
-    defaultText.left().print()
-    ,
-    newText("Hi!")
-    ,
-    newText("To get started, we'll collect some basic information so that we can assign you credit and compare results across English language background groups.")
-    ,
-    newText("Enter your uniqname (without the @umich.edu):")
-    ,
-    // ID input
-    newTextInput("inputID", "")
-  //     .center()
-     //   .css("margin","1em")    // Add a 1em margin around this element
-        .print()
-    ,
-    newText("Was English a primary or dominant language of your environment for most of your first ten years?")
-    ,
-    // English input
-    newDropDown("inputEnglish" , "")
-    .add( "yes" , "no" )
-    .print()
-    ,
-    newButton("Start")
-        .center()
-        .print()
-        // Only validate a click on Start when inputID has been filled
-        .wait( getTextInput("inputID").testNot.text("") )
-    ,
-    // Store the text from inputID into the Var element
-    newVar("partID")
-        .global()
-        .set(getTextInput("inputID") )
-    ,
-    newVar("English")
-        .global()
-        .set(getDropDown("inputEnglish") )
-)
-.log("partID", getVar("partID"))
-
-// This is run at the beginning of each trial
-Header(
-    // Declare a global Var element "ID" in which we will store the participant's ID
-    newVar("partID").global()    
-)
-.log( "partid" , getVar("partID") ) // Add the ID to all trials' results lines
 
 var showProgressBar =false;
 
