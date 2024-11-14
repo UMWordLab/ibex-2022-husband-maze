@@ -69,7 +69,7 @@ var practiceItemTypes = ["practice"];
 
 var manualSendResults = true;
 
-// this doesn't work for "pushed" items from CSV only practice
+// this doesn't work for pushed CSV items
 var defaults = [
     "Maze", {redo: true}, //uncomment to try "redo" mode
 ];
